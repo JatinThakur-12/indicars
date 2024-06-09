@@ -1,5 +1,9 @@
+import dotenv from "dotenv"
 import {app} from "./app"
 
-app.listen(8000,()=>{
-    console.log("Server is running")
+dotenv.config({
+    path:"./.env"
+})
+app.listen(process.env.PORT ,()=>{
+    console.log("Server is running on port", process.env.PORT);
 })
